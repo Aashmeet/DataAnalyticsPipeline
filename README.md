@@ -29,7 +29,7 @@ This lab walks the audience through two processes:
 
 This lab will use AWS S3 as the data lake solution to post a list of documents for part 1 and reviews for part 2 .
 
-### Part 1:
+## Part 1:
 
 For this part , AWS Service Comprehend is used to do the Topic Modelling from S3 and further uses Quicksight to review the results .
 
@@ -268,7 +268,7 @@ g) This will show the terms in Topic 9
 
 Conclusion: From this lab , the process was to extract articles and publish them in S3 ,then use Topic-modelling to analyse the articles and work through visualization tools to analyse the data.
 
-**Part 2:**
+## Part 2:
 
 This part of the lab is a serverless data pipeline implementation to do sentiment analysis based on input entered by the user . This process is also leveraging S3 as a data lake . Please note that for the purpose of the lab we are uploading the reviews but this architecture can be extended to do real time sentiment analysis by getting real-time reviews from customer using Kinesis firehose and implementing an event -driven trigger to upload the data to S3 and conduct sentiment analysis .
 
