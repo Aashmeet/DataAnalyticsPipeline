@@ -58,9 +58,10 @@ Let's dive into each of these steps in detail.
 Step 1 has already been done . So , you need to login to Cloud9 environment
 
 ![](/media/Picture1.png)
-**Step 2 -- ****Download the sample corpus of documents**
 
-**For the purpose of the lab ,the data set is being downloaded to S3 . We can also use Ingestion process to upload these documents to S3(data lake) .**
+**Step 2 Download the sample corpus of documents**
+
+For the purpose of the lab ,the data set is being downloaded to S3 . We can also use Ingestion process to upload these documents to S3(data lake) .
 
 1. Go to AWS Management Console and type Cloud9 in the Services .
 
@@ -88,7 +89,7 @@ Step 1 has already been done . So , you need to login to Cloud9 environment
 
 5. Examine the content in these documents to understand the content used for topic modeling.
 
-**Step 3 -- ****Create an S3 bucket to be used by Amazon Comprehend topic modeling job .This S3 bucket is the placeholder for the structured/raw data to be consumed by other AWS services.**
+**Step 3 Create an S3 bucket to be used by Amazon Comprehend topic modeling job .This S3 bucket is the placeholder for the structured/raw data to be consumed by other AWS services.**
 
 1. Use these commands in the Cloud9 Terminal to create an S3 bucket and upload the sample documents into 'articles' folder
 
@@ -128,7 +129,7 @@ Step 1 has already been done . So , you need to login to Cloud9 environment
 
  ![](/media/Picture4.png)
 
-**Step 4 -- **Create a topic modeling job from Amazon Comprehend Console.
+**Step 4  Create a topic modeling job from Amazon Comprehend Console.**
 
 In order to do this ,go to the Organisation tab ,click on "Create"
 
@@ -136,15 +137,15 @@ In order to do this ,go to the Organisation tab ,click on "Create"
  
 1. Click Create; Enter the following values.
 
-S3 Data Location : <<BUCKET_NAME>>/input folder
+     S3 Data Location : <<BUCKET_NAME>>/input folder
 
-No of topics : 10
+     No of topics : 10
 
-**Input format : One document per file ( Make sure this is selected as this will impact the output)**
+    **Input format : One document per file ( Make sure this is selected as this will impact the output)**
 
-IAM Role : Create an IAM role to give permission to the user to access the input and output buckets
+    IAM Role : Create an IAM role to give permission to the user to access the input and output buckets
 
-S3 Data Location
+    S3 Data Location
 
  ![](/media/Picture6.png)
  
@@ -172,21 +173,21 @@ As soon as you click on Start ,it starts running an asynchronous topic modelling
 
  ![](/media/Picture8.png)
 
-a. Click on the Output data location link in the job info as shown in Step 5, to view the output.tar.gz in the S3 bucket.
+   a. Click on the Output data location link in the job info as shown in Step 5, to view the output.tar.gz in the S3 bucket.
 
-b. Download to your laptop/desktop.
+   b. Download to your laptop/desktop.
 
-c. Extract output.tar.gz file
+   c. Extract output.tar.gz file
 
-d. Verify that you can access the extracted files : "doc-topics.csv"  and "topics-term.csv"
+   d. Verify that you can access the extracted files : "doc-topics.csv"  and "topics-term.csv"
 
 2. Analyze results in Excel.
 
-a. Open "topics-terms.csv" to see the different words (terms) grouped into 10 topics.
+   a. Open "topics-terms.csv" to see the different words (terms) grouped into 10 topics.
 
-b. Open  "doc-topics.csv" to see the topics and their weights identified in the different documents.
+   b. Open  "doc-topics.csv" to see the topics and their weights identified in the different documents.
 
-c. Few observations :
+   c. Few observations :
 
 The document "DiabeticsSleepApnea" has two different topics 1 and 9, just about 50% each. Now notice terms in topic 1 (collision, sufferer, risk, drive, dangerous, accident, relate, significantly sleepy, billion) and topic 9 (diabetes, apnea, sleep, patient, insulin, gluclose). Topic 1 also part of in "TrafficAccidents "(.87)
 
@@ -196,61 +197,56 @@ Notice how the topics (grouped terms) make up the documents.
 
 3. Visualize topic modeling job results in Amazon QuickSight.
 
-a. Open Amazon QuickSight from AWS Console
+   a. Open Amazon QuickSight from AWS Console
 
-b. Create Analysis for "doc-topics.csv"
+   b. Create Analysis for "doc-topics.csv"
 
- i. Click "New Analysis"
+     i. Click "New Analysis"
 
- ii. Click "New Data Set"
+     ii. Click "New Data Set"
 
- iii. Click "Upload a file". Browse to and choose "doc-topics.csv"
+     iii. Click "Upload a file". Browse to and choose "doc-topics.csv"
 
- iv. On "Confirm file upload settings", Click "Next"
+     iv. On "Confirm file upload settings", Click "Next"
 
- v. After the data source is loaded, Click "Visualize"
+     v. After the data source is loaded, Click "Visualize"
 
- vi. In the Visualize view, select
+     vi. In the Visualize view, select
 
-a) Fields list : docname
+           a) Fields list : docname
 
-b) Visual types : piechart
+           b) Visual types : piechart
 
-c) In Field wells section, Value : topic (Count) and Group/Color : docname.
+           c) In Field wells section, Value : topic (Count) and Group/Color : docname.
 
-d) Visualization should be similar to the screenshot below
+           d) Visualization should be similar to the screenshot below
 
- ![](/media/Picture9.png)
+      ![](/media/Picture9.png)
 
-c. Create Analysis for "topic-terms.csv"
+ c. Create Analysis for "topic-terms.csv"
 
- i. Click "New Analysis"
+   i. Click "New Analysis"
+   
+   ii. Click "New Data Set"
+   
+   iii. Click "Upload a file". Browse to and choose "topic-terms.csv"
+   
+   iv. On "Confirm file upload settings", Click "Next"
 
- ii. Click "New Data Set"
+   v. After the data source is loaded, Click "Visualize"
+   
+   vi. In the Visualize view, select
 
- iii. Click "Upload a file". Browse to and choose "topic-terms.csv"
+      a) Fields list : #topic
+      b) Visual types : piechart
+      c) In Field wells section :   Value : topic (Count) and Group/Color : topic.
+      d) Visualization should be similar to screenshot below
 
- iv. On "Confirm file upload settings", Click "Next"
+     ![](/media/Picture10.png)
 
- v. After the data source is loaded, Click "Visualize"
-
- vi. In the Visualize view, select
-
-a) Fields list : #topic
-
-b) Visual types : piechart
-
-c) In Field wells section :   Value : topic (Count) and Group/Color : topic.
-
-d) Visualization should be similar to screenshot below
-
- ![](/media/Picture10.png)
-
-e) Right click on the "9" pie and select "Focus on 9", to drill down into topic 9.
-
-f) In Field wells section, Value : term (Count) and Group/Color : term.
-
-g) This will show the terms in Topic 9
+     e) Right click on the "9" pie and select "Focus on 9", to drill down into topic 9.
+     f) In Field wells section, Value : term (Count) and Group/Color : term.
+     g) This will show the terms in Topic 9
 
  ![](/media/Picture11.png)
 
@@ -309,8 +305,6 @@ Now that you have your IAM role, Lambda function, and S3 bucket deployed, let's 
 ![](/media/PictureS3console.png)
 
 - Create a folder in the bucket and call it "articles" .
-
--  
 
 - Choose the **Properties** Under the Advanced Settings section, choose the **Events** box.
 
