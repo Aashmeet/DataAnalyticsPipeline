@@ -1,24 +1,22 @@
-**Lab : Data Pipeline for Topic Modeling and Sentiment Analysis Using Amazon S3 ,Amazon Comprehend ,Amazon Athena and Amazon Quicksight**
+# Lab: Data Pipeline for Topic Modeling and Sentiment Analysis Using Amazon S3 ,Amazon Comprehend ,Amazon Athena and Amazon Quicksight
 
-**Introduction:**
+## Introduction:
 
 In this lab ,we are focussed on data analysis using a Data Pipeline .  
 
 For building an effective data analytics pipeline , it is important to focus on the following :
 
-- Help ingest data easily from multiple sources.
+1. Help ingest data easily from multiple sources.
 
-- Analyze it for completeness and accuracy.
+2. Analyze it for completeness and accuracy.
 
-- Use it for metrics computations.
+3.  Use it for metrics computations.
 
-- Store the data assets and scale as they grow rapidly without causing disruptions.
+4. Store the data assets and scale as they grow rapidly without causing disruptions.
 
-- Adapt to changes as they happen.
+5. Adapt to changes as they happen.
 
-- Have a relatively short development cycle that is repeatable and easy to implement.
-
-There are two parts of the lab -first part is focussed on automatically organizes a collection of text files by topic and use Quicksight to display the results and second part of the lab is focussed on extracting key sentiments-positive or negative for the text and using Athena and Quicksight to visualize it .
+6. Have a relatively short development cycle that is repeatable and easy to implement.
 
 From an architecture standpoint ,usually the first step would be to ingest the data in a data lake.
 
