@@ -280,7 +280,8 @@ In the CloudFormation console, choose the **Launch Stack** button (above). If in
 
 - Choose **Next** on the Select Template page.
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image024.png)
+![](/media/PictureCF1.png)
+
 
 - Choose **Next** on the Specify Details page.
 
@@ -290,11 +291,11 @@ In the CloudFormation console, choose the **Launch Stack** button (above). If in
 
 - Choose **Create Change Set**.
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image025.png)
+![](/media/PictureCF2.png)
 
  Finally, choose Execute and then let the CloudFormation launch resources in the background. You don't need to wait for it to finish before proceeding to the next step.
+![](/media/PictureCFlast.png)
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image026.png)
 
 Make sure all the resources are created .
 
@@ -304,7 +305,7 @@ Now that you have your IAM role, Lambda function, and S3 bucket deployed, let's 
 
 - Open the [Amazon S3 console](https://console.aws.amazon.com/s3/home?region=us-east-1) and select new S3 bucket that begins with 'review-sentiment.'
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image027.png)
+![](/media/PictureS3console.png)
 
 - Create a folder in the bucket and call it "articles" .
 
@@ -325,10 +326,8 @@ Send to: **Lambda Function**
 Lambda: **review-sentiment-ComprehendSentimentAnalysis-XYZ**
 
 Choose **Save**.
-
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image028.png)
-
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image029.png)
+![](/media/PictureS3Mgmt.png)
+![](/media/PictureS3events.png)
 
 Add your own review as a text file and upload to S3 in the folder 'articles':
 
@@ -344,17 +343,14 @@ For eg *:* *"So it ís been an interesting first few weeks with the Echo and am 
 
 **Note: **This is an event-driven serverless architecture we created. The uploaded review to our S3 bucket was considered an event that triggered our **Comprehend-SentimentAnalysis** function, which then in return outputs the sentiment and sentiment confidence scores into a CSV within the sentiment folder of your S3 bucket.
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image030.png)
-
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image031.png)
+![](/media/PictureS31.png)
+![](/media/PictureS32.png)
 
  Select a review and then choose **Download**:
 
 Choose the **sentiment** folder and **open the CSV file** to view its contents.
-
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image032.png)
-
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image033.png)
+![](/media/PictureOutput.png)
+![](/media/PictureSpreadsheet.png)
 
 The Sentiment information describes the overall sentiment of the text and also sentiment scores of each label: Positive, Negative, Neutral, and Mixed. All of these sentiment scores are returned from an MXNet deep learning model and are depicted as a float between 0 and 1, where 1 is full confidence of the sentiment label. For example, this CSV shows that the Amazon Echo Dot review has a POSITIVE overall sentiment with an 82% positive sentiment score (confidence).
 
@@ -392,7 +388,7 @@ In the [Athena](https://console.aws.amazon.com/athena/home?region=us-east-1) con
 
 *) LOCATION 's3://<bucket_name>/sentiment/' "*
 
-*![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image034.png)*
+![](/media/PictureAthena1)
 
 After you notice that your table has been successfully created, copy the following SQL statement and paste it into the editor.  Choose Run Query.
 
@@ -400,10 +396,9 @@ SELECT * FROM default.ReviewSentimentAnalysis WHERE sentiment='POSITIVE'
 
 ORDER BY positive DESC
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image035.png)
+![](/media/PictureAthena)
 
 **Step 4 : Cleanup Lab resources by  emptying the S3 bucket and then deleting the cloudformation stack .**
 
 * * * * *
 
- [[MOU1]](#_msoanchor_1)Check if this can be added in Cloud9
