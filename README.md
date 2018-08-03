@@ -48,7 +48,7 @@ Let’s dive into each of these steps in detail.
 Step 1 has already been done . So , you need to login to Cloud9 environment 
 
 Inline-style: 
-![alt text](https://github.com/aashmeet/images/1.png "AWS Cloud9 Environment")
+![alt text](https://github.com/Aashmeet/DataAnalyticsPipeline.git/Picture1)
 
 
 
