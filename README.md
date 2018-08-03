@@ -160,15 +160,18 @@ As soon as you click on Start ,it starts running an asynchronous topic modelling
 
 3. Topic Modeling job takes about 4 --5 minutes to complete.
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image016.png)
+ ![](/media/Picture5.png)
 
-![Text Box: Once the job is complete, output is available in the S3 bucket.](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image017.png)![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image018.png)           
+![Text Box: Once the job is complete, output is available in the S3 bucket.]
+
+ ![](/media/Picture6.png)
+  ![](/media/Picture7.png)
 
 **Step 5 -- **Analyze topic modeling job results
 
 1. Download results of topic modeling job from S3.
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image019.png)
+ ![](/media/Picture8.png)
 
 a. Click on the Output data location link in the job info as shown in Step 5, to view the output.tar.gz in the S3 bucket.
 
@@ -218,7 +221,7 @@ c) In Field wells section, Value : topic (Count) and Group/Color : docname.
 
 d) Visualization should be similar to the screenshot below
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image020.png)
+ ![](/media/Picture9.png)
 
 c. Create Analysis for "topic-terms.csv"
 
@@ -242,7 +245,7 @@ c) In Field wells section :   Value : topic (Count) and Group/Color : topic.
 
 d) Visualization should be similar to screenshot below
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image021.png)
+ ![](/media/Picture10.png)
 
 e) Right click on the "9" pie and select "Focus on 9", to drill down into topic 9.
 
@@ -250,7 +253,7 @@ f) In Field wells section, Value : term (Count) and Group/Color : term.
 
 g) This will show the terms in Topic 9
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image022.png)
+ ![](/media/Picture11.png)
 
 **Step 7 -- ****Clean up lab resources**
 
@@ -270,8 +273,7 @@ Conclusion: From this lab , the process was to extract articles and publish them
 
 This part of the lab is a serverless data pipeline implementation to do sentiment analysis based on input entered by the user . This process is also leveraging S3 as a data lake . Please note that for the purpose of the lab we are uploading the reviews but this architecture can be extended to do real time sentiment analysis by getting real-time reviews from customer using Kinesis firehose and implementing an event -driven trigger to upload the data to S3 and conduct sentiment analysis .
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image023.png)
-
+![](/media/Architecture.png)
 Step 1 : Select the region US-East and deploy the Cloudformation template .
 
  We will start off by deploying an [AWS CloudFormation](https://aws.amazon.com/cloudformation/) template to provision the necessary AWS Identity and Access Management (IAM) role and Lambda function needed in order to interact with the Amazon S3, AWS Lambda, and Amazon Comprehend APIs.
