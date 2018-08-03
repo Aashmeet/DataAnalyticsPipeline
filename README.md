@@ -19,18 +19,17 @@ For building an effective data analytics pipeline , it is important to focus on 
 6. Have a relatively short development cycle that is repeatable and easy to implement.
 
 From an architecture standpoint ,usually the first step would be to ingest the data in a data lake.
-
 A data lake is a repository that holds a large amount of raw data in its native (structured or unstructured) format until the data is needed. Storing data in its native format enables you to accommodate any future schema requirements or design changes.
 
 This lab walks the audience through two processes:
 
-- Process of topic modeling using Amazon Comprehend using a combination of AWS Console and "Cloud9". While the recommendation is to use at least 1,000 documents for a topic modeling job, for the purposes of this lab we will use a sample set of five documents. The sample documents consist of a subset of research and education material available from ResMed website ([www.resmed.com](http://www.resmed.com)).
+1. Process of topic modeling using Amazon Comprehend using a combination of AWS Console and "Cloud9". While the recommendation is to use at least 1,000 documents for a topic modeling job, for the purposes of this lab we will use a sample set of five documents. The sample documents consist of a subset of research and education material available from ResMed website ([www.resmed.com](http://www.resmed.com)).
 
-- Serverless Process of sentiment analysis using Amazon Comprehend ,S3 and Quicksight[[MOU1]](#_msocom_1) 
+2. Serverless Process of sentiment analysis using Amazon Comprehend ,S3 and Quicksight[[MOU1]](#_msocom_1) 
 
 This lab will use AWS S3 as the data lake solution to post a list of documents for part 1 and reviews for part 2 .
 
-**Part 1:**
+### Part 1:
 
 For this part , AWS Service Comprehend is used to do the Topic Modelling from S3 and further uses Quicksight to review the results .
 
@@ -58,8 +57,7 @@ Let's dive into each of these steps in detail.
 
 Step 1 has already been done . So , you need to login to Cloud9 environment
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png)
-
+![](/media/Picture1.png)
 **Step 2 -- ****Download the sample corpus of documents**
 
 **For the purpose of the lab ,the data set is being downloaded to S3 . We can also use Ingestion process to upload these documents to S3(data lake) .**
@@ -82,11 +80,11 @@ Step 1 has already been done . So , you need to login to Cloud9 environment
 
 *aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/TrafficAccidents .*
 
-*![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.png)*
+ ![](/media/Picture2.png)
 
 4. These files downloaded should be available in your project .
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image003.png)
+ ![](/media/Picture3.png)
 
 5. Examine the content in these documents to understand the content used for topic modeling.
 
@@ -128,14 +126,14 @@ Step 1 has already been done . So , you need to login to Cloud9 environment
 
 6. Additionally, create "output" folder in S3 bucket at the same level as "articles" folder.
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image004.png)
+ ![](/media/Picture4.png)
 
 **Step 4 -- **Create a topic modeling job from Amazon Comprehend Console.
 
 In order to do this ,go to the Organisation tab ,click on "Create"
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image005.png)
-
+ ![](/media/Picture5.png)
+ 
 1. Click Create; Enter the following values.
 
 S3 Data Location : <<BUCKET_NAME>>/input folder
@@ -148,11 +146,12 @@ IAM Role : Create an IAM role to give permission to the user to access the input
 
 S3 Data Location
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image006.png)![Text Box: Select "articles" folder from S3 bucket created in Step 3 ](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image007.png)![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image008.png)
+ ![](/media/Picture6.png)
+ 
+ ![](/media/Picture7.png)
+ 
+ ![](/media/Picture8.png)
 
-![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image009.png)![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image010.png)![Text Box: Create IAM Role for access to the inout and output buckets](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image011.png)![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image012.png)![Text Box: Select "output" folder from S3 bucket created in Step 3 ](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image013.png)![](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image014.png)
-
-![Text Box: Start an asynchronous topic modeling job.](file:////Users/aashmee/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image015.png)
 
 As soon as you click on Start ,it starts running an asynchronous topic modelling job.
 
@@ -160,7 +159,7 @@ As soon as you click on Start ,it starts running an asynchronous topic modelling
 
 3. Topic Modeling job takes about 4 --5 minutes to complete.
 
- ![](/media/Picture5.png)
+ ![](/media/Picture9.png)
 
 ![Text Box: Once the job is complete, output is available in the S3 bucket.]
 
