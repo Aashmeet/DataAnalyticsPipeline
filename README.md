@@ -41,7 +41,7 @@ Amazon Comprehend examines a corpus of documents to find the common themes conta
 3.	Download the sample corpus of documents.
 
 These steps involve the developers to learn and experiment.
-4.	Create an S3 bucket to be used by the topic modeling job.
+4.      Create an S3 bucket to be used by the topic modeling job.
 5.      Create a topic modeling job from Amazon Comprehend Console.
 6.      Analyze topic modeling job results.
 7.      Cleanup lab resources .
