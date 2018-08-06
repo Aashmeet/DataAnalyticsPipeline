@@ -94,33 +94,33 @@ aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/Traffic
 
 **(Note : These commands are assume unix, please use 'setenv' on windows)**
 
-*TOPIC_MODELING_DEMO_BUCKET=topic-modeling-demo-<<userfirstandlastnamewithnospaces>>-date*
+TOPIC_MODELING_DEMO_BUCKET=topic-modeling-demo-<<userfirstandlastnamewithnospaces>>-date
 
-*AWS_REGION=us-west-2*
+AWS_REGION=us-west-2
 
-*ARTICLES_FOLDER=articles*
+ARTICLES_FOLDER=articles
 
-*OUTPUT_FOLDER=output*
+OUTPUT_FOLDER=output
 
 3. Create the  bucket
 
-*aws s3 mb s3://$TOPIC_MODELING_DEMO_BUCKET *
+aws s3 mb s3://$TOPIC_MODELING_DEMO_BUCKET
 
 4. Upload the sample documents to this bucket into 'articles' folder
 
-*aws s3  cp AutoSetTechnology            s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/*
+aws s3  cp AutoSetTechnology            s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-*aws s3 cp *DiabeticsSleepApnea *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/*
+aws s3 cp *DiabeticsSleepApnea *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-*aws s3 cp *HotHMV *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/*
+aws s3 cp *HotHMV *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-*aws s3 cp *ObesitySleepApnea *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/*
+aws s3 cp *ObesitySleepApnea *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-*aws s3 cp *SleepTherapyCompliance * s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/*
+aws s3 cp *SleepTherapyCompliance * s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-*aws s3 cp *TrafficAccidents *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/*
+aws s3 cp *TrafficAccidents *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-*5. *Validate that these files appear in S3 bucket using the console.
+5. Validate that these files appear in S3 bucket using the console.
   
   aws s3 ls s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
@@ -135,7 +135,7 @@ In order to do this ,go to the Services ,type Amazon Comprehend ,then go to the 
  ![](/media/Picture5.png)
  
 1. Click Create; Enter the following values.
-     Name - TM_<<Yourfirstnamelastname>>
+     Name : TM_<<Yourfirstnamelastname>>
 
      S3 Data Location : <<BUCKET_NAME>>/input folder
 
@@ -143,7 +143,7 @@ In order to do this ,go to the Services ,type Amazon Comprehend ,then go to the 
 
     **Input format : One document per file ( Make sure this is selected as this will impact the output)**
 
-    IAM Role : Create an IAM role to give permission to the user to access the input and output buckets
+    IAM Role : Create an IAM role to give permission to the user to access the input and output buckets and add an alias name for it.
 
     S3 Data Location
 
@@ -161,11 +161,11 @@ As soon as you click on Start ,it starts running an asynchronous topic modelling
 
 While you are waiting for the learning to complete ,you can start executing Part 2 to learn about serverless architecture using Comprehend and come back to this to visualize when the job is finished .
 
-3. Topic Modeling job takes about 4 --5 minutes to complete.
+3. Topic Modeling job takes about 6 to 7 minutes to complete.
 
  ![](/media/Picture9.png)
 
-![Text Box: Once the job is complete, output is available in the S3 bucket.]
+4.  Once the job is complete, output is available in the S3 bucket.
 
  ![](/media/Picture6.png)
   ![](/media/Picture7.png)
