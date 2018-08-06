@@ -168,7 +168,7 @@ While you are waiting for the learning to complete ,you can start executing Part
 
 3. Topic Modeling job takes about 6 to 7 minutes to complete.
 
- ![](/media/Picture9.png)
+
 
 4.  Once the job is complete, output is available in the S3 bucket.
 
