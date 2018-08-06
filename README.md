@@ -29,6 +29,8 @@ This lab walks the audience through two processes:
 
 This lab will use AWS S3 as the data lake solution to post a list of documents for part 1 and reviews for part 2 .
 
+You can do either Part 1 or Part 2 . If you want to do both , it will take slightly longer than 15-20 minutes .
+
 ## Part 1:
 
 For this part , AWS Service Comprehend is used to do the Topic Modelling from S3 and further uses Quicksight to review the results .
