@@ -359,39 +359,28 @@ We take this a step further by having our SQL statement order all of the reviews
 
 In the [Athena](https://console.aws.amazon.com/athena/home?region=us-east-1) console, run the following commands to create the Athena table in the default database. Important: Replace **<bucket_name>** with the S3 bucket created earlier.
 
-*"CREATE EXTERNAL TABLE IF NOT EXISTS default.ReviewSentimentAnalysis'<<firstnamealias>>' (*
 
-* `ImageLocation` string,*
+CREATE EXTERNAL TABLE IF NOT EXISTS default.ReviewSentimentAnalysis’<<fullnamealias>>’ (
+  `ImageLocation` string,
+  `Timestamp` string,   
+  `Sentiment` string,
+  `Positive` string,
+  `Negative` string,
+  `Neutral` string,
+  `Mixed` string
+  )
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
+WITH SERDEPROPERTIES (
+  'serialization.format' = ',',
+  'field.delim' = ','
+) LOCATION 's3://<bucket_name>/sentiment/' 
 
-* `Timestamp` string,  *
-
-* `Sentiment` string,*
-
-* `Positive` string,*
-
-* `Negative` string,*
-
-* `Neutral` string,*
-
-* `Mixed` string*
-
-* )*
-
-*ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'*
-
-*WITH SERDEPROPERTIES (*
-
-* 'serialization.format' = ',',*
-
-* 'field.delim' = ','*
-
-*) LOCATION 's3://<bucket_name>/sentiment/' "*
 
 ![](/media/PictureAthena1)
 
 After you notice that your table has been successfully created, copy the following SQL statement and paste it into the editor.  Choose Run Query.
 
-SELECT * FROM default.ReviewSentimentAnalysis WHERE sentiment='POSITIVE'
+SELECT * FROM default.ReviewSentimentAnalysis<<fullnamealias>> WHERE sentiment='POSITIVE'
 
 ORDER BY positive DESC
 
