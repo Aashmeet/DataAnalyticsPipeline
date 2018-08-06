@@ -44,8 +44,8 @@ These steps involve the developers to learn and experiment.
 
 4.	Create an S3 bucket to be used by the topic modeling job.
 5.	Create a topic modeling job from Amazon Comprehend Console.
-6.	Analyze topic modeling job results.
-7.      Cleanup lab resources .
+7.	Analyze topic modeling job results.
+
 
 Let’s dive into each of these steps in detail.
 
@@ -90,11 +90,11 @@ aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/Traffic
 
 1. Use these commands in the Cloud9 Terminal to create an S3 bucket and upload the sample documents into 'articles' folder
 
-2. Set the environment variables (Use appropriate values below)
+-Set the environment variables (Use appropriate values below)
 
-**(Note : These commands are assume unix, please use 'setenv' on windows)**
 
-TOPIC_MODELING_DEMO_BUCKET=topic-modeling-demo-<<userfirstandlastnamewithnospaces>>-date
+
+TOPIC_MODELING_DEMO_BUCKET=topic-modeling-demo-[userfirstandlastnamewithnospaces]-date
 
 AWS_REGION=us-west-2
 
@@ -102,11 +102,11 @@ ARTICLES_FOLDER=articles
 
 OUTPUT_FOLDER=output
 
-3. Create the  bucket
+2. Create the bucket
 
 aws s3 mb s3://$TOPIC_MODELING_DEMO_BUCKET
 
-4. Upload the sample documents to this bucket into 'articles' folder
+3. Upload the sample documents to this bucket into 'articles' folder
 
 aws s3  cp AutoSetTechnology  s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
@@ -120,11 +120,11 @@ aws s3 cp SleepTherapyCompliance  s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOL
 
 aws s3 cp TrafficAccidents s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-5. Validate that these files appear in S3 bucket using the console.
+4. Validate that these files appear in S3 bucket using the console.
   
   aws s3 ls s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-6. Go to Services and type S3 in the AWS services . Click on the bucket you created just now . Create “output” folder in S3 bucket at the same level as “articles” folder.
+5. Go to Services and type S3 in the AWS services . Click on the bucket you created just now . Create “output” folder in S3 bucket at the same level as “articles” folder.
 	
  ![](/media/Picture4.png)
 
