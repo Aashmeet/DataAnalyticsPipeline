@@ -137,7 +137,7 @@ In order to do this ,go to the Services ,type Amazon Comprehend ,then go to the 
 1. Click Create; Enter the following values.
      Name : TM_[Yourfirstnamelastname]
 
-     S3 Data Location : <<BUCKET_NAME>>/input folder
+     S3 Data Location : s3://<<BUCKET_NAME>>/input folder
 
      No of topics : 10
 
