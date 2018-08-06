@@ -57,10 +57,11 @@ For the purpose of the lab ,the data set is being downloaded to S3 . We can also
 
 1.Go to AWS Management Console in the region US West (Oregon) and type Cloud9 in the Services .  Open the IDE starting with “ DataAnalyticsPipelineLab”
 
-![](/media/Picture1.png)
+![](/media/Cloud9mainpage.png)
 
 2. 	In the Project window ,there should be list of documents available for you to analyse. If not ,execute Step 3 ,else move to bullet point 4 .
 
+![](/media/List of Docs.png)
 
 3. Use these commands to download the sample documents onto your local environment. 
 
