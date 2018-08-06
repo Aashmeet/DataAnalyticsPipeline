@@ -25,7 +25,7 @@ This lab walks the audience through two processes:
 
 1. Process of topic modeling using Amazon Comprehend using a combination of AWS Console and "Cloud9". While the recommendation is to use at least 1,000 documents for a topic modeling job, for the purposes of this lab we will use a sample set of five documents. The sample documents consist of a subset of research and education material available from ResMed website ([www.resmed.com](http://www.resmed.com)).
 
-2. Serverless Process of sentiment analysis using Amazon Comprehend, S3 and Quicksight 
+2. Serverless Process of sentiment analysis using Amazon Comprehend, S3 and Quicksight. 
 
 This lab will use AWS S3 as the data lake solution to post a list of documents for part 1 and reviews for part 2.
 
@@ -37,8 +37,8 @@ For this part, AWS Service Comprehend is used to do the Topic Modelling from S3 
 
 Amazon Comprehend examines a corpus of documents to find the common themes contained within the corpus. Amazon Comprehend's topic modeling capability examines the documents in the corpus and then returns the most prominent topics and the documents that are associated with each topic. Topic modeling is an asynchronous process, where you submit a set of documents for processing and then later get the results when processing is complete.
 
- For this lab ,these high-level steps are already completed :
-1.	Prerequisite : Install and configure ‘awscli’. This should have been completed already as a part of pre-setup .
+ For this lab ,these high-level steps are already completed:
+1.	Prerequisite : Install and configure ‘awscli’. This should have been completed already as a part of pre-setup.
 2.	Or Install and Setup Cloud9 environment.
 3.	Download the sample corpus of documents.
 
@@ -52,21 +52,21 @@ These steps involve the developers to learn and experiment.
 Let’s dive into each of these steps in detail.
 
 
-Step 1 has already been completed . 
+Step 1 has already been completed. 
 
 **Step 2 Verify/Download the sample corpus of documents**
 
-For the purpose of the lab ,the data set is being downloaded to S3 . We can also use Ingestion process to upload these documents to S3(data lake) .
+For the purpose of the lab, the data set is being downloaded to S3. We can also use Ingestion process to upload these documents to S3(data lake).
 
-1.Go to AWS Management Console in the region US West (Oregon) and type Cloud9 in the Services .  Open the IDE starting with “ DataAnalyticsPipelineLab”
+1.Go to AWS Management Console in the region US West (Oregon) and type Cloud9 in the Services. Open the IDE starting with “ DataAnalyticsPipelineLab”
 
 ![](/media/Cloud9mainpage.png)
 
-2. 	In the Project window ,there should be list of documents available for you to analyse. If not ,execute Step 3 ,else move to bullet point 4 .
+2. 	In the Project window ,there should be list of documents available for you to analyse. If not ,execute Step 3 ,else move to bullet point 4.
 
 ![](/media/ListofDocs.png)
 
-3. Use these commands to download the sample documents onto your local environment. 
+3. Use these commands to download the sample documents onto your local environment. (dont forget the "." as they indicate current directory)
 
 aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/AutoSetTechnology .
 
@@ -132,26 +132,18 @@ aws s3 cp TrafficAccidents s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
 **Step 4  Create a topic modeling job from Amazon Comprehend Console.**
 
-In order to do this ,go to the Services ,type Amazon Comprehend ,then go to the Organisation tab  for the service and click on “Create”
+In order to do this ,go to the Services ,type Amazon Comprehend, then go to the Organisation tab  for the service and click on “Create” .
 
- 
  
 1. Click Create; Enter the following values.
-     Name : TM_[Yourfirstnamelastname]
-
+     Name : TM_[Yourfirstnamelastname] 
      S3 Data Location : s3://<<BUCKET_NAME>>/articles folder
-
      No of topics : 10
-
-    **Input format : One document per file ( Make sure this is selected as this will impact the output)**
-
-    IAM Role : Create an IAM role to give permission to the user to access the input and output buckets and add an alias name for it.
+**Input format : One document per file ( Make sure this is selected as this will impact the output)**
+ IAM Role : Create an IAM role to give permission to the user to access the input and output buckets and add an alias name for it.
     
-    In the "Choose an IAM role: ,select "Create an IAM role" and add a suffix with your firstname and lastname alias
+In the "Choose an IAM role: ,select "Create an IAM role" and add a suffix with your firstname and lastname alias.
 
-   
- 
- 
  ![](/media/Picture5.png)
 
  ![](/media/Picture6.png)
@@ -161,7 +153,7 @@ In order to do this ,go to the Services ,type Amazon Comprehend ,then go to the 
  ![](/media/Picture8.png)
 
 
-As soon as you click on Start ,it starts running an asynchronous topic modelling job.
+As soon as you click on Start, it starts running an asynchronous topic modelling job.
 
 2. Comprehend dashboard should show the job created and In Progress status.
 
@@ -175,7 +167,7 @@ While you are waiting for the learning to complete ,you can start executing Part
 4.  Once the job is complete, output is available in the S3 bucket.
 
  ![](/media/Picture6.png)
-  ![](/media/Picture7.png)
+ ![](/media/Picture7.png)
 
 **Step 5 -- **Analyze topic modeling job results
 
@@ -187,7 +179,7 @@ While you are waiting for the learning to complete ,you can start executing Part
 
    b. Download to your laptop/desktop.
 
-   c. Extract output.tar.gz file
+   c. Extract output.tar.gz file.
 
    d. Verify that you can access the extracted files : "doc-topics.csv"  and "topics-term.csv"
 
