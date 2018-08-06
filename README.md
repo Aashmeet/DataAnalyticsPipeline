@@ -108,17 +108,17 @@ aws s3 mb s3://$TOPIC_MODELING_DEMO_BUCKET
 
 4. Upload the sample documents to this bucket into 'articles' folder
 
-aws s3  cp AutoSetTechnology            s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
+aws s3  cp AutoSetTechnology  s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-aws s3 cp *DiabeticsSleepApnea *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
+aws s3 cp DiabeticsSleepApnea  s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-aws s3 cp *HotHMV *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
+aws s3 cp HotHMV s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-aws s3 cp *ObesitySleepApnea *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
+aws s3 cp ObesitySleepApnea s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-aws s3 cp *SleepTherapyCompliance * s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
+aws s3 cp SleepTherapyCompliance  s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-aws s3 cp *TrafficAccidents *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
+aws s3 cp TrafficAccidents s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
 5. Validate that these files appear in S3 bucket using the console.
   
