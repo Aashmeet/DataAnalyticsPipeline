@@ -132,10 +132,10 @@ aws s3 cp TrafficAccidents s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
 In order to do this ,go to the Services ,type Amazon Comprehend ,then go to the Organisation tab  for the service and click on “Create”
 
- ![](/media/Picture5.png)
+ 
  
 1. Click Create; Enter the following values.
-     Name : TM_<<Yourfirstnamelastname>>
+     Name : TM_[Yourfirstnamelastname]
 
      S3 Data Location : <<BUCKET_NAME>>/input folder
 
@@ -146,6 +146,9 @@ In order to do this ,go to the Services ,type Amazon Comprehend ,then go to the 
     IAM Role : Create an IAM role to give permission to the user to access the input and output buckets and add an alias name for it.
 
     S3 Data Location
+ 
+ 
+ ![](/media/Picture5.png)
 
  ![](/media/Picture6.png)
  
