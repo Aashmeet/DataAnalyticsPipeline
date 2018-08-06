@@ -66,17 +66,17 @@ For the purpose of the lab ,the data set is being downloaded to S3 . We can also
 
 3. Use these commands to download the sample documents onto your local environment. 
 
-*aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/AutoSetTechnology .*
+aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/AutoSetTechnology .
 
-*aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/DiabeticsSleepApnea .*
+aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/DiabeticsSleepApnea .
 
-*aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/HotHMV .*
+aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/HotHMV .
 
-*aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/ObesitySleepApnea .*
+aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/ObesitySleepApnea .
 
-*aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/SleepTherapyCompliance .*
+aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/SleepTherapyCompliance .
 
-*aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/TrafficAccidents .*
+aws s3 cp s3://comprehend-topic-modeling-workshop/sample-document-corpus/TrafficAccidents .
 
  ![](/media/Picture2.png)
 
