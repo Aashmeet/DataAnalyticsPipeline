@@ -41,17 +41,15 @@ Amazon Comprehend examines a corpus of documents to find the common themes conta
 3.	Download the sample corpus of documents.
 
 These steps involve the developers to learn and experiment.
-4.      Create an S3 bucket to be used by the topic modeling job.
-5.	Create a topic modeling job from Amazon Comprehend console.
-6.	Analyze topic modeling job results.
-7.	Cleanup lab resources
+4.	Create an S3 bucket to be used by the topic modeling job.
+5.      Create a topic modeling job from Amazon Comprehend Console.
+6.      Analyze topic modeling job results.
+7.      Cleanup lab resources .
 
 Let’s dive into each of these steps in detail.
 
 
 Step 1 has already been completed . 
-
-
 
 **Step 2 Verify/Download the sample corpus of documents**
 
@@ -277,6 +275,8 @@ Step 1 : Select the region US-East and deploy the Cloudformation template .
  We will start off by deploying an [AWS CloudFormation](https://aws.amazon.com/cloudformation/) template to provision the necessary AWS Identity and Access Management (IAM) role and Lambda function needed in order to interact with the Amazon S3, AWS Lambda, and Amazon Comprehend APIs.
 
 In the CloudFormation console, choose the **Launch Stack** button (above). If interested, you can view the YAML template [here](https://s3.amazonaws.com/aws-ml-blog/artifacts/Detect-sentiment-from-customer-reviews/setup.yaml). A YAML Template is provided ,so upload the template .
+
+-Name the stack as review-sentiment-<fullname>
 
 - Choose **Next** on the Select Template page.
 
