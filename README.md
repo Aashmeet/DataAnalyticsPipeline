@@ -1,4 +1,4 @@
-# Lab: Data Pipeline for Topic Modeling and Sentiment Analysis Using Amazon S3 ,Amazon Comprehend ,Amazon Athena and Amazon Quicksight
+# Lab: Data Pipeline for Topic Modeling and Sentiment Analysis Using Amazon S3, Amazon Comprehend, Amazon Athena and Amazon Quicksight
 
 ## Introduction:
 
