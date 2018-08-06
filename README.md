@@ -244,7 +244,7 @@ Notice how the topics (grouped terms) make up the documents.
       c) In Field wells section :   Value : topic (Count) and Group/Color : topic.
       d) Visualization should be similar to screenshot below
 
-     ![](/media/Picture10.png)
+  ![](/media/Picture10.png)
 
      e) Right click on the "9" pie and select "Focus on 9", to drill down into topic 9.
      f) In Field wells section, Value : term (Count) and Group/Color : term.
