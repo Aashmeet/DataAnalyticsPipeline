@@ -259,9 +259,9 @@ Notice how the topics (grouped terms) make up the documents.
 
 (Note : This is a force delete. Make sure to use correct bucket name. Alternatively, you can delete the bucket from console.)
 
-*$TOPIC_MODELING_DEMO_BUCKET =="nameofbucket"
+$TOPIC_MODELING_DEMO_BUCKET =="nameofbucket"
 
-* aws s3 rb s3://$TOPIC_MODELING_DEMO_BUCKET --force
+ aws s3 rb s3://$TOPIC_MODELING_DEMO_BUCKET --force
 
 2. Delete Analysis and DataSet from QuickSight console.
 
