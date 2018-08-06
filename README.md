@@ -35,37 +35,34 @@ For this part , AWS Service Comprehend is used to do the Topic Modelling from S3
 
 Amazon Comprehend examines a corpus of documents to find the common themes contained within the corpus. Amazon Comprehend's topic modeling capability examines the documents in the corpus and then returns the most prominent topics and the documents that are associated with each topic. Topic modeling is an asynchronous process, where you submit a set of documents for processing and then later get the results when processing is complete.
 
-This lab involves completing these high-level steps:
-
-1. Prerequisite : Install and configure 'awscli'. This should have been completed already as a part of pre-setup .
-
-2. Or Install and Setup Cloud9 environment.
+ For this lab ,these high-level steps are already completed :
+1.	Prerequisite : Install and configure ‘awscli’. This should have been completed already as a part of pre-setup .
+2.	Or Install and Setup Cloud9 environment.
+3.	Download the sample corpus of documents.
 
 These steps involve the developers to learn and experiment.
+4.	Create an S3 bucket to be used by the topic modeling job.
+5.	Create a topic modeling job from Amazon Comprehend console.
+6.	Analyze topic modeling job results.
+7.	Cleanup lab resources
 
-3. Download the sample corpus of documents.
+Let’s dive into each of these steps in detail.
 
-4. Create an S3 bucket to be used by the topic modeling job.
 
-5. Create a topic modeling job from Amazon Comprehend console.
+Step 1 has already been completed . 
 
-6. Analyze topic modeling job results.
 
-7. Cleanup lab resources
 
-Let's dive into each of these steps in detail.
-
-Step 1 has already been done . So , you need to login to Cloud9 environment
-
-![](/media/Picture1.png)
-
-**Step 2 Download the sample corpus of documents**
+**Step 2 Verify/Download the sample corpus of documents**
 
 For the purpose of the lab ,the data set is being downloaded to S3 . We can also use Ingestion process to upload these documents to S3(data lake) .
 
-1. Go to AWS Management Console and type Cloud9 in the Services .
+1.Go to AWS Management Console in the region US West (Oregon) and type Cloud9 in the Services .  Open the IDE starting with “ DataAnalyticsPipelineLab”
 
-2. In the terminal below , execute the commands as mentioned in Step 3
+![](/media/Picture1.png)
+
+2. 	In the Project window ,there should be list of documents available for you to analyse. If not ,execute Step 3 ,else move to bullet point 4 .
+
 
 3. Use these commands to download the sample documents onto your local environment. 
 
@@ -97,7 +94,7 @@ For the purpose of the lab ,the data set is being downloaded to S3 . We can also
 
 **(Note : These commands are assume unix, please use 'setenv' on windows)**
 
-*TOPIC_MODELING_DEMO_BUCKET=topic-modeling-demo-<<username>>-date*
+*TOPIC_MODELING_DEMO_BUCKET=topic-modeling-demo-<<userfirstandlastnamewithnospaces>>-date*
 
 *AWS_REGION=us-west-2*
 
@@ -124,18 +121,21 @@ For the purpose of the lab ,the data set is being downloaded to S3 . We can also
 *aws s3 cp *TrafficAccidents *s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/*
 
 *5. *Validate that these files appear in S3 bucket using the console.
+  
+  aws s3 ls s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
-6. Additionally, create "output" folder in S3 bucket at the same level as "articles" folder.
-
+6. Go to Services and type S3 in the AWS services . Click on the bucket you created just now . Create “output” folder in S3 bucket at the same level as “articles” folder.
+	
  ![](/media/Picture4.png)
 
 **Step 4  Create a topic modeling job from Amazon Comprehend Console.**
 
-In order to do this ,go to the Organisation tab ,click on "Create"
+In order to do this ,go to the Services ,type Amazon Comprehend ,then go to the Organisation tab  for the service and click on “Create”
 
  ![](/media/Picture5.png)
  
 1. Click Create; Enter the following values.
+     Name - TM_<<Yourfirstnamelastname>>
 
      S3 Data Location : <<BUCKET_NAME>>/input folder
 
@@ -157,6 +157,9 @@ In order to do this ,go to the Organisation tab ,click on "Create"
 As soon as you click on Start ,it starts running an asynchronous topic modelling job.
 
 2. Comprehend dashboard should show the job created and In Progress status.
+
+
+While you are waiting for the learning to complete ,you can start executing Part 2 to learn about serverless architecture using Comprehend and come back to this to visualize when the job is finished .
 
 3. Topic Modeling job takes about 4 --5 minutes to complete.
 
@@ -324,7 +327,7 @@ Choose **Save**.
 ![](/media/PictureS3Mgmt.png)
 ![](/media/PictureS3events.png)
 
-Add your own review as a text file and upload to S3 in the folder 'articles':
+Add your own review as a text file  or copy from the reviews folder and upload to S3 in the folder 'articles':
 
 For eg *:* *"So it ís been an interesting first few weeks with the Echo and am happy to say Echo 2nd Gen has finally delivered on its promise of improved sound quality over 1st Gen Echo, with the 3rd firmware since launch. If you are confused about a lot of the negative reviews, old firmware is the likely cause of most of them regarding poor sound quality.*
 
