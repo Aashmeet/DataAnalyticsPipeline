@@ -144,8 +144,10 @@ In order to do this ,go to the Services ,type Amazon Comprehend ,then go to the 
     **Input format : One document per file ( Make sure this is selected as this will impact the output)**
 
     IAM Role : Create an IAM role to give permission to the user to access the input and output buckets and add an alias name for it.
+    
+    In the "Choose an IAM role: ,select "Create an IAM role" and add a suffix with your firstname and lastname alias
 
-    S3 Data Location
+   
  
  
  ![](/media/Picture5.png)
