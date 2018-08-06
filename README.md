@@ -25,7 +25,7 @@ This lab walks the audience through two processes:
 
 1. Process of topic modeling using Amazon Comprehend using a combination of AWS Console and "Cloud9". While the recommendation is to use at least 1,000 documents for a topic modeling job, for the purposes of this lab we will use a sample set of five documents. The sample documents consist of a subset of research and education material available from ResMed website ([www.resmed.com](http://www.resmed.com)).
 
-2. Serverless Process of sentiment analysis using Amazon Comprehend ,S3 and Quicksight[[MOU1]](#_msocom_1) 
+2. Serverless Process of sentiment analysis using Amazon Comprehend ,S3 and Quicksight 
 
 This lab will use AWS S3 as the data lake solution to post a list of documents for part 1 and reviews for part 2 .
 
