@@ -1,0 +1,48 @@
+# Copyright 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved. Made available under the Apache 2.0 License. 
+# --------------------------------------------------------------------------------------------
+
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Backend for Review Sentiment Architecture with Amazon Comprehend.
+
+Transform: 'AWS::Serverless-2016-10-31'
+
+Resources:
+  S3:
+    Type: AWS::S3::Bucket
+
+# The Lambda Function below is used to call the Amazon Comprehend API and output the customer review sentiment.
+# --------------------------------------------------------------------------------------------
+  ComprehendSentimentAnalysis:
+    Properties:
+      CodeUri: s3://aws-ml-blog/artifacts/Detect-sentiment-from-customer-reviews/comprehend.zip
+      Description: "Triggered by S3 review upload to the repo bucket and start the sentiment analysis via Amazon Comprehend"
+      Handler: comprehend.handler
+      MemorySize: 128
+      Policies:
+        Statement:
+          -
+            Sid: "comprehend"
+            Effect: Allow
+            Action:
+              - comprehend:*
+            Resource: "*"
+          -
+            Sid: "s3"
+            Effect: Allow
+            Action:
+              - s3:*
+            Resource: !Sub "arn:aws:s3:::${S3}/*"
+      Environment:
+        Variables:
+          bucket: !Ref S3
+      Runtime: python3.6
+      Timeout: 20
+    Type: AWS::Serverless::Function
+
+Outputs:
+  S3ReviewSentimentBucket:
+    Value:
+      Ref: "S3"
+  Region:
+    Value:
+      Ref: AWS::Region
