@@ -128,12 +128,13 @@ aws s3 cp TrafficAccidents s3://$TOPIC_MODELING_DEMO_BUCKET/$ARTICLES_FOLDER/
 
 5. Go to Services and type S3 in the AWS services . Click on the bucket you created just now . Create “output” folder in S3 bucket at the same level as “articles” folder.
 	
- ![](/media/Picture4.png)
+
 
 **Step 4  Create a topic modeling job from Amazon Comprehend Console.**
 
 In order to do this ,go to the Services ,type Amazon Comprehend, then go to the Organisation tab  for the service and click on “Create” .
 
+ ![](/media/Picture4.png)
  
 1. Click Create; Enter the following values.
      Name : TM_[Yourfirstnamelastname] 
